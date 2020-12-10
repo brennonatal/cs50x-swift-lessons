@@ -127,12 +127,3 @@ do {
 catch let error {
    print(error)
 }
-
-//  CLOSURES
-let reversed = names.sorted(by: {(
-    s1: String,
-    s2: String
-) -> Bool in 
-    return s1 > s2
-})
-
