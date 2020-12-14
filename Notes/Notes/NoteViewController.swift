@@ -12,6 +12,11 @@ class NoteViewController: UIViewController {
     
     @IBOutlet var textView: UITextView!
     
+    @IBAction func deleteButton() {
+        NoteManager.main.delete(note: note)
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textView.text = note.contents

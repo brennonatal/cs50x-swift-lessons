@@ -47,5 +47,14 @@ class NotesListViewController: UITableViewController {
             }
         }
     }
+    
+    // this method handles row deletion
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            NoteManager.main.delete(note: notes[indexPath.row])
+            reload()
+        }
+    }
 }
 
